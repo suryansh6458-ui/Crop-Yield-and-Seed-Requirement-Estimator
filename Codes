@@ -1,0 +1,23 @@
+print("===== CROP YIELD ESTIMATOR =====")
+
+area = float(input("Enter field area (hectares): "))
+yield_rate = float(input("Expected yield per hectare (kg): "))
+seed_rate = float(input("Seed requirement per hectare (kg): "))
+
+if area <= 0 or yield_rate <= 0 or seed_rate <= 0:
+    print("Invalid input! Values must be positive.")
+else:
+    production = area * yield_rate
+    seeds = area * seed_rate
+
+    print("\n===== ESTIMATION REPORT =====")
+    print("Field Area:", area, "hectares")
+    print("Expected Production:", round(production, 2), "kg")
+    print("Seeds Required:", round(seeds, 2), "kg")
+
+    if production >= 10000:
+        print("Production Category: High")
+    elif production >= 5000:
+        print("Production Category: Medium")
+    else:
+        print("Production Category: Low")
